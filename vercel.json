@@ -4,22 +4,6 @@
     {
       "source": "/api(.*)",
       "destination": "/api/entrypoint.go"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/controllers/postsController.go"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/initializers/database.go"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/initializers/loadEnvVariables.go"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/models/postModel.go"
     }
   ]
 }
