@@ -5,8 +5,6 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/adhyaksasb/mycommerce-api/controllers"
-	"github.com/adhyaksasb/mycommerce-api/initializers"
 	"github.com/gin-gonic/gin"
 )
 
@@ -16,13 +14,13 @@ var(
 
 func route(r *gin.RouterGroup) {
 	// Write Service
-	r.POST("/posts", controllers.CreatePosts)
-	r.PUT("/posts/:id", controllers.UpdatePost)
-	r.DELETE("/posts/:id", controllers.DeletePost)
+	// r.POST("/posts", controllers.CreatePosts)
+	// r.PUT("/posts/:id", controllers.UpdatePost)
+	// r.DELETE("/posts/:id", controllers.DeletePost)
 
-	// Read Service
-	r.GET("/posts", controllers.IndexPosts)
-	r.GET("/posts/:id", controllers.ShowPost)
+	// // Read Service
+	// r.GET("/posts", controllers.IndexPosts)
+	// r.GET("/posts/:id", controllers.ShowPost)
 
 	r.GET("/hello", func(c *gin.Context) {
 		name := c.Query("name")
@@ -51,8 +49,8 @@ func route(r *gin.RouterGroup) {
 }
 
 func init() {
-	initializers.LoadEnvVariables()
-	initializers.ConnectToDB()
+	// initializers.LoadEnvVariables()
+	// initializers.ConnectToDB()
 	app = gin.New()
 	r := app.Group("/api")
 	route(r)
