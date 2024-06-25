@@ -10,6 +10,7 @@ func init() {
 	initializers.ConnectToDB()
 }
 
+
 func main() {
 	initializers.DB.AutoMigrate(&model.Post{})
 }
