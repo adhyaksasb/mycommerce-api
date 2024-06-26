@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/adhyaksasb/mycommerce-api/controllers"
 	"github.com/adhyaksasb/mycommerce-api/handler"
 	"github.com/gin-gonic/gin"
 )
@@ -45,13 +46,7 @@ func route(r *gin.RouterGroup) {
 			"message": os.Getenv("DB_URL"),
 		})
 	})
-	r.GET("/user/:id", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"data": gin.H{
-				"id": c.Param("id"),
-			},
-		})
-	})
+	r.GET("/user/:id", controllers.TestUser)
 }
 
 func init() {

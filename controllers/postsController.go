@@ -7,6 +7,14 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+func TestUser (c *gin.Context) {
+	c.JSON(200, gin.H{
+		"data": gin.H{
+			"id": c.Param("id"),
+		},
+	})
+}
+
 func CreatePosts (c *gin.Context) {
 	// Get data off req body
 	var body struct {
