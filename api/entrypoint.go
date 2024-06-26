@@ -25,6 +25,9 @@ func route(r *gin.RouterGroup) {
 
 	r.GET("/ping", handler.Ping)
 
+	r.GET("/err", handler.ErrRouter)
+
+
 	r.GET("/hello", func(c *gin.Context) {
 		name := c.Query("name")
 		if name == "" {
@@ -52,8 +55,8 @@ func route(r *gin.RouterGroup) {
 }
 
 func init() {
-	handler.LoadEnvVariables()
-	handler.ConnectToDB()
+	// handler.LoadEnvVariables()
+	// handler.ConnectToDB()
 	app = gin.New()
 	r := app.Group("/api")
 	route(r)
